@@ -1,4 +1,4 @@
-import Map from "../features/map/components/Map";
+import Map from "../../features/map/components/Map";
 
 
 

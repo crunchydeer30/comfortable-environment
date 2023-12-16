@@ -11,7 +11,7 @@ const Header = () => {
   const signOut = useSignOut();
 
   return (
-    <header className="flex border-b-[2px] border-fontPrimary items-center justify-between py-3 px-4 container mx-auto">
+    <header className="flex border-b-[2px] border-fontPrimary items-center justify-between py-3 px-8 container mx-auto">
       <div className="min-w-[25%]">
         <Logo />
       </div>

@@ -6,7 +6,7 @@ const AppLayout = () => {
   return (
     <>
       <Header />
-      <main className="container mx-auto py-8">
+      <main className="container mx-auto py-24">
         <Outlet />
       </main>
       <Footer />

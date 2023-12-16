@@ -16,6 +16,11 @@ export default {
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
       },
+      screens: {
+
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
+      }
     },
   },
   plugins: [],

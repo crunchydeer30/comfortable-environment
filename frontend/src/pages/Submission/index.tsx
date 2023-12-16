@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import useSubmission from "../features/submissions/hooks/useSubmission";
-import SubmissionInfo from "../features/submissions/components/SubmissionInfo";
-import PageHeading from "../ui/PageHeading";
-import Spinner from "../ui/Spinner";
+import useSubmission from "../../features/submissions/hooks/useSubmission";
+import SubmissionInfo from "../../features/submissions/components/SubmissionInfo";
+import PageHeading from "../../ui/PageHeading";
+import Spinner from "../../ui/Spinner";
 
 const SubmissionPage = () => {
   const { id } = useParams();

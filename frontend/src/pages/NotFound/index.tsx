@@ -1,4 +1,4 @@
-import PageHeading from "../ui/PageHeading"
+import PageHeading from "../../ui/PageHeading"
 
 const NotFoundPage = () => {
   return (

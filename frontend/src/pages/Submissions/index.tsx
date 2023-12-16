@@ -1,5 +1,5 @@
-import SubmissionsList from "../features/submissions/components/SubmissionsList";
-import PageHeading from "../ui/PageHeading";
+import SubmissionsList from "../../features/submissions/components/SubmissionsList";
+import PageHeading from "../../ui/PageHeading";
 
 const SubmissionsPage = () => {
   return (
