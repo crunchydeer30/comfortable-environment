@@ -7,22 +7,10 @@ interface SubmissionListItemProps {
 
 const SubmissionListItem = (props: SubmissionListItemProps) => {
   return (
-    <article className="flex gap-16 border-t-[1px] border-b-[1px] border-t-gray-200 border-b-gray-200 py-5 justify-between">
-      <section className="flex flex-col gap-4">
-        <section className="flex gap-2 items-center">
-          <p>{props.submission.user.username}</p>
-          <p>{props.submission.createdAt}</p>
-        </section>
-        <section>
-          <Link to={`/submissions/${props.submission.id}`}>
-            <h2 className="text-2xl">{props.submission.title}</h2>
-          </Link>
-          <p>{props.submission.description}</p>
-        </section>
-      </section>
+    <article className="flex flex-col gap-6 p-4 border-gray-200 border-[1px] rounded-2xl shadow-lg">
       <Link
         to={`/submissions/${props.submission.id}`}
-        className="flex h-[150px] w-[150px] shrink-0 rounded-xl overflow-hidden shadow-xl"
+        className="flex aspect-video overflow-hidden rounded-xl overflow-hidden shadow-xl"
         preventScrollReset={false}
       >
         <img
@@ -31,6 +19,19 @@ const SubmissionListItem = (props: SubmissionListItemProps) => {
           className="w-full h-full object-cover"
         />
       </Link>
+      <section className="flex flex-col gap-4">
+        <section className="flex flex-col gap-4">
+          <Link to={`/submissions/${props.submission.id}`}>
+            <h2 className="text-2xl">{props.submission.title}</h2>
+          </Link>
+          <p className="line-clamp-3">{props.submission.description}</p>
+        </section>
+        <section className="flex flex-col gap-1">
+          <p>Author: {props.submission.user.username}</p>
+          <p>Date: {props.submission.createdAt}</p>
+          <p>Likes: {props.submission.likes}</p>
+        </section>
+      </section>
     </article>
   );
 };

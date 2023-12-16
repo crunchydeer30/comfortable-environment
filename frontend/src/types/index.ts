@@ -16,6 +16,7 @@ export interface Submission {
   pictureAfter: string;
   lat: number;
   lng: number;
+  likes: number;
   user: Omit<User, 'password'>
 }
 
