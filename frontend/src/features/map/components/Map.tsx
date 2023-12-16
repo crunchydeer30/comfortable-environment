@@ -22,7 +22,7 @@ const Map = () => {
       center={[58.5256, 31.2742]}
       zoom={13}
       scrollWheelZoom={true}
-      className="flex-1"
+      className="container 2xl:w-[1536px] aspect-video"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

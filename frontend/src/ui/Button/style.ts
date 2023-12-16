@@ -15,10 +15,10 @@ const style = (buttonStyle: ButtonStyle) => {
 
   switch (buttonStyle) {
     case 'primary':
-      classNames.push('text-white', 'border-[2px]', 'border-primary', 'bg-primary', 'hover:bg-primaryDark');
+      classNames.push('text-white', 'border-[2px]', 'border-primary', 'bg-primary', 'hover:bg-primaryDark', 'hover:border-primaryDark');
       break;
     case 'secondary':
-      classNames.push('text-fontPrimary', 'bg-gray-transparent', 'border-[2px]', 'border-primary', 'hover:bg-gray-100');
+      classNames.push('text-fontPrimary', 'bg-gray-transparent', 'border-[2px]', 'border-primary');
       break;
     default:
       classNames.push('text-white', 'bg-primary', 'hover:bg-primary-light');

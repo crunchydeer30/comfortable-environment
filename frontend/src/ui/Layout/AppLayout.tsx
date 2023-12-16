@@ -6,7 +6,7 @@ const AppLayout = () => {
   return (
     <>
       <Header />
-      <main className="flex flex-col flex-1 container mx-auto p-8">
+      <main className="container mx-auto py-8">
         <Outlet />
       </main>
       <Footer />

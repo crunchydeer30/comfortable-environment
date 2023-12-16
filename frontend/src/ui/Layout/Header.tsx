@@ -22,6 +22,9 @@ const Header = () => {
         >
           Работы
         </Link>
+        <Link to="/teams" className="text-lg hover:text-primary transition">
+          Команды
+        </Link>
         <Link to="/map" className="text-lg hover:text-primary transition">
           Карта
         </Link>
