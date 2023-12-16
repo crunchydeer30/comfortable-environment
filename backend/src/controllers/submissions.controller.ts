@@ -6,7 +6,8 @@ import { parseToken } from '../utils/parsers';
 import { validateDto } from '../utils/validation';
 import CreateSubmissionDto from '../dto/createSubmission.dto';
 import createHttpError from 'http-errors';
-
+import commentsService from '../services/comments.service';
+import CreateCommentDto from '../dto/createComment.dto';
 const submissionsRouter = Router();
 
 submissionsRouter.get('/', async (_req, res, next) => {
@@ -53,5 +54,26 @@ submissionsRouter.delete('/:id', auth.required, async (req, res, next) => {
     return next(e);
   }
 });
+
+submissionsRouter.get('/:id/comments', auth.optional, async (req, res, next) => {
+  try {
+    const comments = await submissionsService.getComments(req.params.id);
+    return res.status(200).json(comments);
+  } catch (e) {
+    return next(e);
+  }
+});
+
+submissionsRouter.post('/:id/comments', auth.required, validateDto(CreateCommentDto), async (req, res, next) => {
+  try {
+    const user = parseToken(res.locals.user);
+    const data = req.body as CreateCommentDto;  
+    const comment = await commentsService.create(data, user.id, req.params.id);
+    return res.status(201).json(comment);
+  } catch (e) {
+    return next(e);
+  }
+});
+
 
 export default submissionsRouter;

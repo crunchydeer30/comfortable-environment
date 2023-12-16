@@ -72,9 +72,19 @@ const deleteById = async (id: string) => {
   });
 };
 
+const getComments = async (id: string) => {
+  const comments = await prisma.comment.findMany({
+    where: {
+      submissionId: id,
+    },
+  });
+  return comments;
+};
+
 export default {
   getAll,
   getById,
   create,
   deleteById,
+  getComments,
 };
