@@ -6,6 +6,10 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import "leaflet/dist/images/marker-icon.png";
+import "leaflet/dist/images/marker-icon-2x.png";
+import "leaflet/dist/images/marker-shadow.png";
+
 import useSubmissions from "../../submissions/hooks/useSubmissions";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +29,7 @@ const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?lang=fr"
       />
       {submissions?.map((submission) => (
-        <Marker position={[submission.lat, submission.lng]}>
+        <Marker position={[submission.lat, submission.lng]} key={submission.id}>
           <Popup>
             <Link to={`/submissions/${submission.id}`}>{submission.title}</Link>
           </Popup>
