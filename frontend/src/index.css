@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  min-height: 100vh;
+  color: #292929;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
